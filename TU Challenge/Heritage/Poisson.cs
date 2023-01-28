@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace TU_Challenge.Heritage
 {
-    public class Poisson : Animal
-    {
-
-    }
+	public class Poisson : Animal
+	{
+		public Poisson(string name) : base(name + " le poisson")
+		{
+		}
+	}
 }

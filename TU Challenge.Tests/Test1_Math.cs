@@ -117,7 +117,8 @@ namespace TU_Challenge
         [TestCase(8, 64)]
         [TestCase(10, 100)]
         [TestCase(15, 225)]
-        public void Power2(int a, int expected)
+		[TestCase(-15, 225)]
+		public void Power2(int a, int expected)
         {
             int result = MyMathImplementation.Power2(a);
             Assert.That(result, Is.EqualTo(expected));
@@ -176,7 +177,7 @@ namespace TU_Challenge
                 new List<int>() { -123, -1, 0, 12, 45, 90, 123});
             Assert.IsTrue(result);
         }
-
+        
         // Votre premier algorithme de tri à implémenter.
         // N'hésitez pas à me demander de l'aide sur la partie théorie.
         // Interdiction d'appeller Sort sur la liste.
@@ -204,7 +205,7 @@ namespace TU_Challenge
 
             var result = MyMathImplementation.GenericSort(toSort, MyMathImplementation.IsInOrder);
 
-            for (int i = 0; i < result.Count - 1; i++)
+            for (int i = 0; i < result.Count() - 1; i++)
             {
                 Assert.IsTrue(result[i] < result[i + 1]);
             }
@@ -219,11 +220,10 @@ namespace TU_Challenge
 
             var result = MyMathImplementation.GenericSort(toSort, MyMathImplementation.IsInOrderDesc);
 
-            for (int i = 0; i < result.Count - 1; i++)
+            for (int i = 0; i < result.Count() - 1; i++)
             {
                 Assert.IsTrue(result[i] > result[i + 1]);
             }
         }
-
     }
 }

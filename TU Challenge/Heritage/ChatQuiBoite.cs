@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace TU_Challenge.Heritage
 {
-    public class ChatQuiBoite : Chat
-    {
-        
-
-    }
+	public class ChatQuiBoite : Chat
+	{
+		public ChatQuiBoite(string name) : base(name)
+		{
+			// Sorry...
+			Pattes--;
+		}
+	}
 }
